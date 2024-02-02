@@ -44,7 +44,7 @@ const Rules = () => {
                     </ul>
                 </div>
                 <CustomButton
-                    onClick={() => navigate('/')}
+                    onClick={() => navigate('/FEM-Connect4/')}
                     variant="Validate"
                 />
             </MenuContainer>

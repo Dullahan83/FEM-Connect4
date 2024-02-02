@@ -7,7 +7,7 @@ const ColumnIndicator = () => {
         <>
             {currPlayer === 'red' ? (
                 <img
-                    src="./public/assets/images/marker-red.svg"
+                    src="/FEM-Connect4/assets/images/marker-red.svg"
                     className={cn(
                         'mb absolute bottom-full left-1/2 z-30 hidden w-fit -translate-x-1/2 lg:mb-6 lg:group-hover/column:flex',
                         {
@@ -17,7 +17,7 @@ const ColumnIndicator = () => {
                 />
             ) : (
                 <img
-                    src="./public/assets/images/marker-yellow.svg"
+                    src="/FEM-Connect4/assets/images/marker-yellow.svg"
                     className={cn(
                         'mb absolute bottom-full left-1/2 z-30 hidden w-fit -translate-x-1/2 lg:mb-6 lg:group-hover/column:flex',
                         {

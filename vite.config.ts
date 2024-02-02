@@ -3,6 +3,6 @@ import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    // base: '/FEM-Invoices/',
+    base: '/FEM-Connect4/',
     plugins: [react()],
 })

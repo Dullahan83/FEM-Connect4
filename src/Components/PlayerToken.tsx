@@ -34,13 +34,13 @@ const PlayerToken = ({
     const isWinningToken = arrayContainsArray(winningPositions, pos)
     return tokenColor === 'red' ? (
         <>
-            <div className='relative aspect-square w-full  rounded-full bg-[url("./assets/images/counter-red-small.svg")] sm:bg-[url("./assets/images/counter-red-large.svg")]'>
+            <div className='relative aspect-square w-full  rounded-full bg-[url("/FEM-Connect4/assets/images/counter-red-small.svg")] sm:bg-[url("/FEM-Connect4/assets/images/counter-red-large.svg")]'>
                 {isWinningToken ? <Checktoken /> : null}
             </div>
         </>
     ) : (
         <>
-            <div className='relative aspect-square  w-full rounded-full bg-[url("./assets/images/counter-yellow-small.svg")] sm:bg-[url("./assets/images/counter-yellow-large.svg")]'>
+            <div className='relative aspect-square  w-full rounded-full bg-[url("/FEM-Connect4/assets/images/counter-yellow-small.svg")] sm:bg-[url("/FEM-Connect4/assets/images/counter-yellow-large.svg")]'>
                 {isWinningToken ? <Checktoken /> : null}
             </div>
         </>

@@ -31,7 +31,7 @@ const Menu = React.forwardRef<HTMLDialogElement, MenuProps>(
             onClose()
         }
         const handleQuit = () => {
-            navigate('/')
+            navigate('/FEM-Connect4/')
             onClose()
         }
 
@@ -43,7 +43,7 @@ const Menu = React.forwardRef<HTMLDialogElement, MenuProps>(
             >
                 <div
                     ref={MenuBody}
-                    className="py-7.5 sm:py-12.5 shadow-container gap-7.5 bg-purple flex h-fit flex-col items-center rounded-[40px] border-[3px] border-black px-5 sm:-mt-8 sm:w-[480px] sm:px-10 lg:-mt-24"
+                    className="py-7.5 sm:py-12.5 shadow-container gap-7.5 bg-purple flex h-fit flex-col items-center rounded-[40px] border-[3px] border-black px-5 sm:-mt-8 sm:w-[480px] sm:px-10 lg:mt-6"
                 >
                     <h1 className=" text-Heading-L uppercase text-white sm:mb-2">
                         pause

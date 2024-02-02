@@ -3,9 +3,11 @@
     "private": true,
     "version": "0.0.0",
     "type": "module",
+    "homepage": "https://dullahan83.github.io/FEM-Connect4/",
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
+        "deploy": "tsc && vite build && gh-pages -d dist -r https://github.com/Dullahan83/FEM-Connect4.git",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview"
     },

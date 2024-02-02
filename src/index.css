@@ -29,10 +29,12 @@ body,
 }
 
 .redPlayer {
-    background: url('/public/assets/images/counter-red-small.svg') no-repeat;
+    background: url('/FEM-Connect4/assets/images/counter-red-small.svg')
+        no-repeat;
 }
 .yellowPlayer {
-    background: url('/public/assets/images/counter-yellow-small.svg') no-repeat;
+    background: url('/FEM-Connect4/assets/images/counter-yellow-small.svg')
+        no-repeat;
 }
 
 .token {
@@ -45,10 +47,11 @@ body,
 
 @media screen and (min-width: 640px) {
     .redPlayer {
-        background: url('/public/assets/images/counter-red-large.svg') no-repeat;
+        background: url('/FEM-Connect4/assets/images/counter-red-large.svg')
+            no-repeat;
     }
     .yellowPlayer {
-        background: url('/public/assets/images/counter-yellow-large.svg')
+        background: url('/FEM-Connect4/assets/images/counter-yellow-large.svg')
             no-repeat;
     }
     .falling-token {

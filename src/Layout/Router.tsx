@@ -6,9 +6,9 @@ const Router = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/Game" element={<Game />} />
-                <Route path="/Rules" element={<Rules />} />
+                <Route path="/FEM-Connect4/" element={<Home />} />
+                <Route path="/FEM-Connect4/Game" element={<Game />} />
+                <Route path="/FEM-Connect4/Rules" element={<Rules />} />
             </Routes>
         </BrowserRouter>
     )
