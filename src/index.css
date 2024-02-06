@@ -67,6 +67,17 @@ body,
     0% {
         transform: translateY(calc(6 * -70px - 70px));
     }
+    95% {
+        transform: translateY(
+            calc(
+                (
+                    (6 - var(--empty-cells)) * -70px +
+                        ((6 - var(--empty-cells)) * -20px) - 20px
+                )
+            )
+        );
+    }
+    90%,
     100% {
         transform: translateY(
             calc(
@@ -82,6 +93,17 @@ body,
     0% {
         transform: translateY(calc(6 * -40px - 40px));
     }
+    95% {
+        transform: translateY(
+            calc(
+                (
+                    (6 - var(--empty-cells)) * -40px +
+                        ((6 - var(--empty-cells)) * -7px) - 12px
+                )
+            )
+        );
+    }
+    90%,
     100% {
         transform: translateY(
             calc(

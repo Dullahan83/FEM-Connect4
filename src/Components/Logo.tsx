@@ -28,29 +28,29 @@ const Logo = ({ ...props }: ComponentPropsWithoutRef<'svg'>) => {
                         >
                             <g id="Group-23" fill="#000000">
                                 <circle
-                                    id="Oval-Copy-47"
+                                    id="Oval-Copy-50"
                                     cx="13"
                                     cy="13"
                                     r="13"
-                                ></circle>
+                                />
                                 <circle
                                     id="Oval-Copy-51"
                                     cx="45"
                                     cy="13"
                                     r="13"
-                                ></circle>
+                                />
                                 <circle
                                     id="Oval-Copy-53"
                                     cx="13"
                                     cy="45"
                                     r="13"
-                                ></circle>
+                                />
                                 <circle
                                     id="Oval-Copy-52"
                                     cx="45"
                                     cy="45"
                                     r="13"
-                                ></circle>
+                                />
                             </g>
                             <g
                                 id="Group-23-Copy"

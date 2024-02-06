@@ -32,6 +32,7 @@ const Menu = React.forwardRef<HTMLDialogElement, MenuProps>(
         }
         const handleQuit = () => {
             navigate('/FEM-Connect4/')
+            resetGame()
             onClose()
         }
 

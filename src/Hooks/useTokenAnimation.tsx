@@ -2,11 +2,6 @@ import { useState } from 'react'
 import { useGameContext } from './useContext'
 
 const useTokenAnimation = () => {
-    // Récuperer l'emplacement de la colonne visée
-    // Calculer la distance libre restante dans la colonne (board[index] donnera le nombre de jetons présents à ce moment)
-    // Créer un élément html utilisant les coordonnées de l'emplacement de la colonne
-    // Definir le style manuellement (longueur de l'animation en fonction de la distance de chute)
-    // a la fin de l'animation, supprimer l'élement et effecture le addToken
     const [isAnimating, setIsAnimating] = useState(false)
     const [showToken, setShowToken] = useState(false)
     const { board, addToken, currPlayer, winner, isGameOver } = useGameContext()
@@ -28,17 +23,15 @@ const useTokenAnimation = () => {
         setShowToken(true)
         setIsAnimating(true)
 
-        // Définissez ici la logique pour la durée de l'animation
-        setTimeout(
-            () => {
-                setShowToken(false)
-                setIsAnimating(false)
-                // Ici, ajoutez le jeton au tableau de jeu
-                token.remove()
-                addToken(colIndex, currPlayer)
-            } /* durée de l'animation */,
-            durationAnim
-        )
+        // Timeout to match the end of animation
+        const timer = setTimeout(() => {
+            setShowToken(false)
+            setIsAnimating(false)
+            // Remove temporary token and add new token to boardData
+            token.remove()
+            addToken(colIndex, currPlayer)
+        }, durationAnim)
+        return () => clearTimeout(timer)
     }
 
     return { showToken, startAnimation }

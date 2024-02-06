@@ -19,7 +19,6 @@ const TurnSlate = () => {
     }, [currPlayer])
 
     React.useEffect(() => {
-        console.log(timer)
         if (timer === 0) {
             onTimeUp()
         }

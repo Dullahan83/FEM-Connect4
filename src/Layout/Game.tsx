@@ -32,7 +32,7 @@ const Game = () => {
     return (
         <main
             className={cn(
-                "bg-purple before:bg-darkPurple lg:before:h-50 py-12.5 sm:pt-7.5 relative flex h-full w-full flex-col items-center px-5 before:absolute before:bottom-0 before:h-[236px] before:w-full before:rounded-t-[60px] before:content-[''] sm:px-0 sm:before:h-[234px] lg:pt-[53px]",
+                "bg-purple before:bg-darkPurple lg:before:h-50 py-12.5 sm:pt-7.5 relative flex h-full w-full flex-col items-center px-5 before:absolute before:bottom-0 before:h-[236px] before:w-full before:rounded-t-[60px] before:content-[''] sm:px-0 sm:before:h-[234px] lg:pt-[49px] ",
                 {
                     'before:bg-red': winner === 'red',
                     'before:bg-yellow': winner === 'yellow',
@@ -49,12 +49,12 @@ const Game = () => {
                     Restart
                 </CustomButton>
             </div>
-            <section className="gap-y-12.5 mt-[51px] flex w-full flex-wrap items-center justify-center gap-x-5 sm:mt-8 sm:gap-8 lg:mt-[51px] lg:flex-nowrap lg:gap-14">
+            <section className="gap-y-12.5 mt-[51px] flex w-full flex-wrap items-center justify-center gap-x-5 sm:mt-8 sm:gap-8 lg:mt-[45px] lg:flex-nowrap lg:gap-14">
                 {/* Player 1 */}
                 <PlayerCard
                     player={'red'}
                     score={score.red}
-                    className="order-1 flex-col sm:w-[272px] sm:flex-row sm:justify-between sm:gap-x-5 sm:pl-11 sm:pr-5 lg:order-none lg:w-[141px] lg:px-0 "
+                    className="order-1 flex-col sm:w-[272px] sm:flex-row sm:justify-between sm:gap-x-5 sm:pl-11 sm:pr-5 lg:order-none lg:w-[141px] lg:justify-normal lg:px-0 "
                 />
                 {/* Game Board */}
                 <Board className="order-3 lg:order-none" />
@@ -62,7 +62,7 @@ const Game = () => {
                 <PlayerCard
                     player={'yellow'}
                     score={score.yellow}
-                    className="order-2 flex-col sm:w-[272px]  sm:flex-row-reverse sm:justify-between sm:gap-x-5 sm:pl-5 sm:pr-11 lg:order-none lg:w-[141px] lg:px-0"
+                    className="order-2 flex-col sm:w-[272px]  sm:flex-row-reverse sm:justify-between sm:gap-x-5 sm:pl-5 sm:pr-11 lg:order-none lg:w-[141px] lg:justify-normal lg:px-0"
                 />
             </section>
             <Menu ref={modalRef} onClose={handleClose} />
