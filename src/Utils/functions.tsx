@@ -28,6 +28,7 @@ export const checkForWinner: CheckForWinner = (
     }
     return null
 }
+
 export const getLine: GetLine = (
     board,
     startX,

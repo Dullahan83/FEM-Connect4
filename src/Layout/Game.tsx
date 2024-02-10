@@ -3,14 +3,15 @@ import Board from '../Components/Board'
 import CustomButton from '../Components/CustomButton'
 import Logo from '../Components/Logo'
 import PlayerCard from '../Components/PlayerCard'
+import useComputerMove from '../Hooks/useComputerMove'
 import { useGameContext } from '../Hooks/useContext'
 import { cn } from '../Utils/functions'
 import Menu from './Menu'
 
 const Game = () => {
-    const { resetGame, score, ClearTimer, PauseTimer, winner } =
+    const { resetGame, score, ClearTimer, PauseTimer, winner, currPlayer } =
         useGameContext()
-
+    const { playMove } = useComputerMove()
     const modalRef = React.useRef<HTMLDialogElement>(null)
 
     const handleOPen = () => {
@@ -29,10 +30,15 @@ const Game = () => {
         ClearTimer()
     }
 
+    React.useEffect(() => {
+        if (currPlayer === 'yellow') {
+            playMove()
+        }
+    }, [currPlayer])
     return (
         <main
             className={cn(
-                "bg-purple before:bg-darkPurple lg:before:h-50 py-12.5 sm:pt-7.5 relative flex h-full w-full flex-col items-center px-5 before:absolute before:bottom-0 before:h-[236px] before:w-full before:rounded-t-[60px] before:content-[''] sm:px-0 sm:before:h-[234px] lg:pt-[49px] ",
+                "relative flex h-full w-full flex-col items-center bg-purple px-5 py-12.5 before:absolute before:bottom-0 before:h-[236px] before:w-full before:rounded-t-[60px] before:bg-darkPurple before:content-[''] sm:px-0 sm:pt-7.5 sm:before:h-[234px] lg:pt-[49px] lg:before:h-50 ",
                 {
                     'before:bg-red': winner === 'red',
                     'before:bg-yellow': winner === 'yellow',
@@ -49,7 +55,7 @@ const Game = () => {
                     Restart
                 </CustomButton>
             </div>
-            <section className="gap-y-12.5 mt-[51px] flex w-full flex-wrap items-center justify-center gap-x-5 sm:mt-8 sm:gap-8 lg:mt-[45px] lg:flex-nowrap lg:gap-14">
+            <section className="mt-[51px] flex w-full flex-wrap items-center justify-center gap-x-5 gap-y-12.5 sm:mt-8 sm:gap-8 lg:mt-[45px] lg:flex-nowrap lg:gap-14">
                 {/* Player 1 */}
                 <PlayerCard
                     player={'red'}

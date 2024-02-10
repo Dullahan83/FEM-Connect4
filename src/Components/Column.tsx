@@ -13,7 +13,7 @@ const Column = ({ colData, index, ...props }: ColumnProps) => {
         <>
             <div
                 {...props}
-                className="group/column relative z-10 flex h-full w-10 flex-col-reverse gap-[7px] bg-red-300 pb-[11px] hover:cursor-pointer sm:w-[70px] sm:gap-[18px]"
+                className="column group/column bg-red-300 relative z-10 flex h-full w-10 flex-col-reverse gap-[7px] pb-[11px] hover:cursor-pointer sm:w-[70px] sm:gap-[18px]"
             >
                 {colData?.map((token, i) => {
                     return (

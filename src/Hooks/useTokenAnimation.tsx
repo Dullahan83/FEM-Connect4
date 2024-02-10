@@ -7,6 +7,7 @@ const useTokenAnimation = () => {
     const { board, addToken, currPlayer, winner, isGameOver } = useGameContext()
 
     const startAnimation = (target: HTMLDivElement, colIndex: number) => {
+        if (!target) return
         const token = document.createElement('span')
         const classname = ` absolute z-40 bg-white aspect-square token rounded-full `
         const emptyCells = 6 - board[colIndex].length

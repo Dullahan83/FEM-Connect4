@@ -38,7 +38,6 @@ const GameProvider = ({ children }: { children: React.ReactNode }) => {
         activateTimer,
     } = useGame()
     const { timer, StartTimer, ClearTimer, PauseTimer } = useTimer()
-
     return (
         <GameContext.Provider
             value={{
