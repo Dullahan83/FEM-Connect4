@@ -9,7 +9,7 @@ const useComputerMove = () => {
     const playMove = () => {
         const { score, col } = minimax(
             board,
-            6,
+            2,
             -Infinity,
             Infinity,
             true,
