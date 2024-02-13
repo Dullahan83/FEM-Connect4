@@ -44,7 +44,7 @@ const Game = () => {
         if (cpu && currPlayer === 'yellow') {
             playMove()
         }
-    }, [currPlayer])
+    }, [currPlayer, winner])
     return (
         <main
             className={cn(
