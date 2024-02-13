@@ -17,3 +17,10 @@ export type CheckForWinner = (
     rowIndex: number,
     player: TokenColor
 ) => number[][] | null
+
+export enum Difficulty {
+    EASY = 1,
+    MEDIUM = 3,
+    HARD = 6,
+    EXTREME = 9,
+}

@@ -1,18 +1,24 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 import Board from '../Components/Board'
 import CustomButton from '../Components/CustomButton'
 import Logo from '../Components/Logo'
 import PlayerCard from '../Components/PlayerCard'
-import useComputerMove from '../Hooks/useComputerMove'
+import useAI from '../Hooks/useAI'
 import { useGameContext } from '../Hooks/useContext'
+import { Difficulty } from '../Utils/Types'
 import { cn } from '../Utils/functions'
 import Menu from './Menu'
 
 const Game = () => {
     const { resetGame, score, ClearTimer, PauseTimer, winner, currPlayer } =
         useGameContext()
-    const { playMove } = useComputerMove()
+    const { playMove, adjustDifficulty } = useAI()
     const modalRef = React.useRef<HTMLDialogElement>(null)
+
+    const location = useLocation()
+    const difficulty = new URLSearchParams(location.search).get('difficulty')
+    const cpu = new URLSearchParams(location.search).get('cpu')
 
     const handleOPen = () => {
         modalRef.current?.show()
@@ -29,9 +35,13 @@ const Game = () => {
         resetGame()
         ClearTimer()
     }
-
     React.useEffect(() => {
-        if (currPlayer === 'yellow') {
+        if (cpu && difficulty && difficulty in Difficulty) {
+            adjustDifficulty(difficulty as keyof typeof Difficulty)
+        }
+    }, [])
+    React.useEffect(() => {
+        if (cpu && currPlayer === 'yellow') {
             playMove()
         }
     }, [currPlayer])

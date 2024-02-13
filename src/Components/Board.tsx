@@ -1,4 +1,5 @@
 import { ComponentPropsWithoutRef } from 'react'
+import { useLocation } from 'react-router-dom'
 import { useGameContext } from '../Hooks/useContext'
 import useTokenAnimation from '../Hooks/useTokenAnimation'
 import Column from './Column'
@@ -6,12 +7,15 @@ import TurnSlate from './TurnSlate'
 import WinSlate from './WinSlate'
 
 const Board = ({ ...props }: ComponentPropsWithoutRef<'div'>) => {
-    const { board, winner, isGameOver } = useGameContext()
+    const { board, winner, isGameOver, currPlayer } = useGameContext()
     const { startAnimation } = useTokenAnimation()
+    const location = useLocation()
+    const cpu = new URLSearchParams(location.search).get('cpu')
     const handlePlay = (
         e: React.MouseEvent<HTMLDivElement, MouseEvent>,
         index: number
     ) => {
+        if (cpu && currPlayer === 'yellow') return
         startAnimation(e.currentTarget, index)
     }
 
